@@ -2,6 +2,9 @@ import requests
 import json
 from urllib.parse import urljoin
 from tester_interface.cPrint import cPrint, cprint, cprint_err, cprint_suc, cprint_info
+import time
+import random
+
 class RestTester():
     
     # HTTP Codes - Non Extensive list
@@ -21,6 +24,7 @@ class RestTester():
     ERR_MISSING_FIELD = -1
     ERR_INVALID_FIELD = -2
     ERR_REQ_FAILED = -3
+    ERR_TEST_FAILED = -4
     ERR_UNKNOWN = -100
 
     status_codes = {
@@ -28,6 +32,7 @@ class RestTester():
         ERR_MISSING_FIELD: "Missing field in response",
         ERR_INVALID_FIELD: "Invalid field in response",
         ERR_REQ_FAILED: "A request failed",
+        ERR_TEST_FAILED: "The test failed",
         ERR_UNKNOWN: "Unknown error",
 
         SUC_HTTP_OK: "Successful HTTP request",
@@ -47,12 +52,12 @@ class RestTester():
 
     # Paths
     API_CATEGORIES = "/api/blog/categories/"
+    API_POSTS      = "/api/blog/posts/"
 
     def __init__(self, config_file):
         with open(config_file, 'r') as _f:
             config = json.load(_f)
         self.base_url = config['base_url']
-        self.default_state = config['default_state']
 
     ###########################################################################
     # 'Private' functions
@@ -67,14 +72,20 @@ class RestTester():
         else:
             return ret
 
-    def __check_request_status(self, req):
+    def __check_request_status(self, req, verbose=True):
         ret = self.ERR_UNKNOWN
         if not req.ok:
-            print(f"HTTP Status Error: {req.status_code} - {self.__dec_status(req.status_code)}")
+            if verbose:
+                print(f"HTTP Status Error: {req.status_code} - {self.__dec_status(req.status_code)}")
             ret = req.status_code
         else:
             ret = self.ERR_NONE
         return ret
+    
+    @staticmethod
+    def __is_html_error(status_code):
+        "Checks if a status code is between 400-499 - HTML Status error"
+        return (status_code//100) == 4
 
     def __get_category_from_id(self, id, resp):
         """
@@ -136,8 +147,6 @@ class RestTester():
         return requests.get(urljoin(_url, str(id)))
 
     def put_category_by_id(self, id, name):
-        if type(id) != int:
-            raise TypeError("id is of type {0}, must be integer.".format(type(id)))
         _url = urljoin(self.base_url, self.API_CATEGORIES)
         _url = urljoin(_url, str(id))
         _data = {
@@ -148,6 +157,8 @@ class RestTester():
     ###########################################################################
     # Basic Tests
     ###########################################################################
+    ###########################################################################
+    # Basic functional testing
     def test_blog_categories_GET(self):
         req = self.get_categories()
         cprint_info(f"\nINFO: GET. Status Code is {req.status_code}")
@@ -171,7 +182,7 @@ class RestTester():
 
     def test_blog_categories_POST(self, name, id=None):
         req = self.post_categories(id, name)
-        cprint_info(f"\nINFO: POST for category {name}. Status Code is {req.status_code}")
+        cprint_info(f"\nINFO: POST for category '{name}'. Status Code is {req.status_code}")
         return self.__check_request_status(req)
     
     def test_blog_categories_DELETE(self, id):
@@ -190,6 +201,8 @@ class RestTester():
         ret = self.__check_request_status(req)
         return ret
     
+    ###########################################################################
+    # Basic Positive Tests for blog categories
     def test_blog_categories_post__check_post__delete(self, name, id=None):
         print(f"Posting Category: \"{name}\"")
         req = self.post_categories(id=id, name=name)
@@ -282,6 +295,59 @@ class RestTester():
         if ret == self.ERR_NONE and del_ret == self.ERR_NONE:
             cprint_suc(f"Test succesful")
             return self.ERR_NONE
+    
+    ###########################################################################
+    # Basic Negative Tests for blog categories
+    def test_blog_categories_post_invalid_id_format(self, id, name="Null"):
+        post_ret = self.test_blog_categories_POST(id=id, name=name)
+        cprint_info(f"Candidate ID: {id}")
+        if self.__is_html_error(post_ret):
+            cprint_suc("Request rejected successfully")
+            return self.ERR_NONE
+        else:
+            cprint_err("ERROR: Invalid post request was not rejected")
+            return self.ERR_TEST_FAILED
+    
+    def test_blog_categories_post_invalid_name_format(self, name):
+        cprint_info(f"Candidate name: {name}")
+        post_ret = self.test_blog_categories_POST(id=None, name=name)
+        if self.__is_html_error(post_ret):
+            cprint_suc("Request rejected successfully")
+            return self.ERR_NONE
+        else:
+            cprint_err("ERROR: Invalid post request was not rejected")
+            return self.ERR_TEST_FAILED
 
+    def test_blog_categories_put_invalid_id_format(self, invalid_id):
+        cprint_info(f"Candidate id: {invalid_id}")
+        put_ret = self.test_blog_categories_PUT(id=invalid_id, new_name="Null")
+        if self.__is_html_error(put_ret):
+            cprint_suc("Request rejected successfully")
+            return self.ERR_NONE
+        else:
+            cprint_err("ERROR: Invalid put request was not rejected")
+            return self.ERR_TEST_FAILED
 
+    def test_blog_categories_put_invalid_name_format(self, invalid_name):
+        # Getting a valid ID for the test
+        random.seed(time.time())
+        req = self.get_categories()
+        ret = self.__check_request_status(req, verbose=False)
+        if ret != self.ERR_NONE:
+            cprint_err("ERROR: Failed to GET blog categories ID in order to fetch valid id")
+            return ret
+        
+        # Choosing ID at random
+        resp = req.json()
+        _id_list = [_.get('id') for _ in resp]
+        id = random.choice(_id_list)
+
+        print(f"Updating Category with id {id} to {invalid_name}")
+        put_ret = self.test_blog_categories_PUT(id=id, new_name=invalid_name)
+        if self.__is_html_error(put_ret):
+            cprint_suc("Request rejected successfully")
+            return self.ERR_NONE
+        else:
+            cprint_err("ERROR: Invalid put request was not rejected")
+            return self.ERR_TEST_FAILED
 
