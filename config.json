@@ -1,3 +1,5 @@
 {
-    "base_url": "http://localhost:8888/"
+    "base_url": "http://localhost:8888/",
+    "default_db_path": "./default_database/db.sqlite",
+    "database_path":   "./rest_api_demo-techtest1.2/rest_api_demo/db.sqlite"
 }

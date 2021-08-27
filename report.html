@@ -1535,7 +1535,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 27-Aug-2021 at 17:44:57 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 27-Aug-2021 at 18:23:56 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -1551,8 +1551,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.10</td></tr></table>
     <h2>Summary</h2>
-    <p>14 tests ran in 1.62 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">11 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>15 tests ran in 1.69 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">12 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -1567,11 +1567,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_post_and_get_and_delete[Category name]</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_001.Test_REST object at 0x7fa686698ca0&gt;, name = &#x27;Category name&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;name&quot;,<br/>        [(&quot;Category name&quot;),<br/>        (&quot;A category name that is quite longer&quot;),<br/>        (&quot;Category@name-with1symbols.&quot;)])<br/>    def test_Blog_categories_post_and_get_and_delete(self, name):<br/>        &quot;&quot;&quot;<br/>        POST blog category, GET it and check that data is consistent, then DELETE<br/>        Mainly to test POST and GET<br/>        &quot;&quot;&quot;<br/>        print_test_title(&quot;Blog Categories - POST, GET, DELETE&quot;)<br/>&gt;       assert self.Tester.test_blog_categories_post__check_post__delete(name=name) \<br/>            == self.Tester.ERR_NONE, &quot;Failed in one of the steps. Please check report for more details&quot;<br/><span class="error">E       AssertionError: Failed in one of the steps. Please check report for more details</span><br/><span class="error">E       assert -2 == 0</span><br/><span class="error">E         +-2</span><br/><span class="error">E         -0</span><br/><br/>test_001.py:39: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi33">
+            <div class="log">self = &lt;test_001.Test_REST object at 0x7f4c55c99af0&gt;, name = &#x27;Category name&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;name&quot;,<br/>        [(&quot;Category name&quot;),<br/>        (&quot;A category name that is quite longer&quot;),<br/>        (&quot;Category@name-with1symbols.&quot;)])<br/>    def test_Blog_categories_post_and_get_and_delete(self, name):<br/>        &quot;&quot;&quot;<br/>        POST blog category, GET it and check that data is consistent, then DELETE<br/>        Mainly to test POST and GET<br/>        &quot;&quot;&quot;<br/>        print_test_title(&quot;Blog Categories - POST, GET, DELETE&quot;)<br/>&gt;       assert self.Tester.test_blog_categories_post__check_post__delete(name=name) \<br/>            == self.Tester.ERR_NONE, &quot;Failed in one of the steps. Please check report for more details&quot;<br/><span class="error">E       AssertionError: Failed in one of the steps. Please check report for more details</span><br/><span class="error">E       assert -2 == 0</span><br/><span class="error">E         +-2</span><br/><span class="error">E         -0</span><br/><br/>test_001.py:40: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi33">
 
 ===================== Blog Categories - POST, GET, DELETE =====================
 </span>
@@ -1592,11 +1592,11 @@ INFO: DELETE ID 4. Status Code is 204</span>
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_post_and_get_and_delete[A category name that is quite longer]</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_001.Test_REST object at 0x7fa686622a90&gt;, name = &#x27;A category name that is quite longer&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;name&quot;,<br/>        [(&quot;Category name&quot;),<br/>        (&quot;A category name that is quite longer&quot;),<br/>        (&quot;Category@name-with1symbols.&quot;)])<br/>    def test_Blog_categories_post_and_get_and_delete(self, name):<br/>        &quot;&quot;&quot;<br/>        POST blog category, GET it and check that data is consistent, then DELETE<br/>        Mainly to test POST and GET<br/>        &quot;&quot;&quot;<br/>        print_test_title(&quot;Blog Categories - POST, GET, DELETE&quot;)<br/>&gt;       assert self.Tester.test_blog_categories_post__check_post__delete(name=name) \<br/>            == self.Tester.ERR_NONE, &quot;Failed in one of the steps. Please check report for more details&quot;<br/><span class="error">E       AssertionError: Failed in one of the steps. Please check report for more details</span><br/><span class="error">E       assert -2 == 0</span><br/><span class="error">E         +-2</span><br/><span class="error">E         -0</span><br/><br/>test_001.py:39: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi33">
+            <div class="log">self = &lt;test_001.Test_REST object at 0x7f4c55cb9b80&gt;, name = &#x27;A category name that is quite longer&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;name&quot;,<br/>        [(&quot;Category name&quot;),<br/>        (&quot;A category name that is quite longer&quot;),<br/>        (&quot;Category@name-with1symbols.&quot;)])<br/>    def test_Blog_categories_post_and_get_and_delete(self, name):<br/>        &quot;&quot;&quot;<br/>        POST blog category, GET it and check that data is consistent, then DELETE<br/>        Mainly to test POST and GET<br/>        &quot;&quot;&quot;<br/>        print_test_title(&quot;Blog Categories - POST, GET, DELETE&quot;)<br/>&gt;       assert self.Tester.test_blog_categories_post__check_post__delete(name=name) \<br/>            == self.Tester.ERR_NONE, &quot;Failed in one of the steps. Please check report for more details&quot;<br/><span class="error">E       AssertionError: Failed in one of the steps. Please check report for more details</span><br/><span class="error">E       assert -2 == 0</span><br/><span class="error">E         +-2</span><br/><span class="error">E         -0</span><br/><br/>test_001.py:40: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi33">
 
 ===================== Blog Categories - POST, GET, DELETE =====================
 </span>
@@ -1621,7 +1621,7 @@ INFO: DELETE ID 4. Status Code is 204</span>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_001.Test_REST object at 0x7fa6865f9ee0&gt;, name = &#x27;Category@name-with1symbols.&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;name&quot;,<br/>        [(&quot;Category name&quot;),<br/>        (&quot;A category name that is quite longer&quot;),<br/>        (&quot;Category@name-with1symbols.&quot;)])<br/>    def test_Blog_categories_post_and_get_and_delete(self, name):<br/>        &quot;&quot;&quot;<br/>        POST blog category, GET it and check that data is consistent, then DELETE<br/>        Mainly to test POST and GET<br/>        &quot;&quot;&quot;<br/>        print_test_title(&quot;Blog Categories - POST, GET, DELETE&quot;)<br/>&gt;       assert self.Tester.test_blog_categories_post__check_post__delete(name=name) \<br/>            == self.Tester.ERR_NONE, &quot;Failed in one of the steps. Please check report for more details&quot;<br/><span class="error">E       AssertionError: Failed in one of the steps. Please check report for more details</span><br/><span class="error">E       assert -2 == 0</span><br/><span class="error">E         +-2</span><br/><span class="error">E         -0</span><br/><br/>test_001.py:39: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi33">
+            <div class="log">self = &lt;test_001.Test_REST object at 0x7f4c55c021c0&gt;, name = &#x27;Category@name-with1symbols.&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;name&quot;,<br/>        [(&quot;Category name&quot;),<br/>        (&quot;A category name that is quite longer&quot;),<br/>        (&quot;Category@name-with1symbols.&quot;)])<br/>    def test_Blog_categories_post_and_get_and_delete(self, name):<br/>        &quot;&quot;&quot;<br/>        POST blog category, GET it and check that data is consistent, then DELETE<br/>        Mainly to test POST and GET<br/>        &quot;&quot;&quot;<br/>        print_test_title(&quot;Blog Categories - POST, GET, DELETE&quot;)<br/>&gt;       assert self.Tester.test_blog_categories_post__check_post__delete(name=name) \<br/>            == self.Tester.ERR_NONE, &quot;Failed in one of the steps. Please check report for more details&quot;<br/><span class="error">E       AssertionError: Failed in one of the steps. Please check report for more details</span><br/><span class="error">E       assert -2 == 0</span><br/><span class="error">E         +-2</span><br/><span class="error">E         -0</span><br/><br/>test_001.py:40: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi33">
 
 ===================== Blog Categories - POST, GET, DELETE =====================
 </span>
@@ -1641,8 +1641,17 @@ INFO: DELETE ID 4. Status Code is 204</span>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_001.py::Test_REST::test_Blog_categories_GET</td>
+          <td class="col-name">test_001.py::Test_REST::test_RESET_DATABASE_TO_DEFAULT</td>
           <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_001.py::Test_REST::test_Blog_categories_GET</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1727,7 +1736,7 @@ HTTP Status Error: 404 - The requested resource could not be found
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_post__put__get__delete[4-Category name]</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1799,7 +1808,7 @@ INFO: DELETE for id 6. Status Code is 204</span>
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_post_invalid_id_format</td>
-          <td class="col-duration">0.31</td>
+          <td class="col-duration">0.32</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1807,295 +1816,13 @@ INFO: DELETE for id 6. Status Code is 204</span>
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: KT*pt</span>
+<span class="ansi34">Candidate ID: ,&#x27;</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: jp&amp;s</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: z</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: o</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: L</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: +</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: qi</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: O#</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: |%RIE</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: liFs</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ]hh</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Ua</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: pE</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: M</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: n</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: T&gt;MC</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: `hga$</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: &gt;%(-</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: QPIGE</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: X+yeI</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: AkN</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: |F</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Sss</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: j.</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: WyM</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Mp\</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: t</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: P(`&lt;&#x27;</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: f}mI</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: y</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: AkN&quot;n</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: !CJE</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: v~Vs</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: NUQ`B</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: &quot;*Bg</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Yy=</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: &quot;IeaM</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: G]y</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ik-</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: )|+X</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: HDD+</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: &amp;,aS=</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: =&lt;^</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: huMYK</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: [A</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ^]</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: x*\^?</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: nl</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: [</span>
+<span class="ansi34">Candidate ID: ./</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
@@ -2107,211 +1834,37 @@ HTTP Status Error: 400 - The server cannot or will not process the request due t
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: e&quot;Vu</span>
+<span class="ansi34">Candidate ID: s</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: M</span>
+<span class="ansi34">Candidate ID: Xz</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: mJ</span>
+<span class="ansi34">Candidate ID: b</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: tQHA</span>
+<span class="ansi34">Candidate ID: Jfq{</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: B</span>
+<span class="ansi34">Candidate ID: ?YkM</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Iq+N</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: AR</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: e</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: XCF</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: t%j</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: SBy</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: zv</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: No,ye</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: p&quot;NO!</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: !}[tP</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: aN{D</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: yidq</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: u`DS(</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: mt_?</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: NS</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: pUep</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: dsaB</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: H&gt;</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: LkRzJ</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: !f</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ,</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: #AQYf</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: &gt;&#x27;</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: #uL~</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: iWB</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ?&gt;IJ</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: mvX&amp;</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Rwn</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ;</span>
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">
-INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: yD|+g</span>
+<span class="ansi34">Candidate ID: &gt;+Qzc</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
@@ -2323,31 +1876,205 @@ HTTP Status Error: 400 - The server cannot or will not process the request due t
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: [h\il</span>
+<span class="ansi34">Candidate ID: v</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: =C);q</span>
+<span class="ansi34">Candidate ID: vb</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Q%;M</span>
+<span class="ansi34">Candidate ID: XF@(</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: deU[C</span>
+<span class="ansi34">Candidate ID: EW</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: %/vR</span>
+<span class="ansi34">Candidate ID: Nak(x</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: DGC+</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: %</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: eZIz</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: )sun]</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: X?A.P</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: O</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: JtH[)</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ITd+</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: KjU</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: T</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: gM</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &gt;c</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: (P.F</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: }iE</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: y</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ms&gt;</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: sQ</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &quot;@O[</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: E</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: V%</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: r@</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: _^(</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: iNr</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: e</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ss&amp;</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ^Fmm</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ?=Of</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: $J</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: F)GUT</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
@@ -2359,166 +2086,364 @@ HTTP Status Error: 400 - The server cannot or will not process the request due t
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Y.</span>
+<span class="ansi34">Candidate ID: V`</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: ]F</span>
+<span class="ansi34">Candidate ID: P)fb</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: iSF=*</span>
+<span class="ansi34">Candidate ID: &lt;q(Gp</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: qxyr</span>
+<span class="ansi34">Candidate ID: Ef</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: $]]y</span>
+<span class="ansi34">Candidate ID: =PUff</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: rU{F</span>
+<span class="ansi34">Candidate ID: ^ivt</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: R}</span>
+<span class="ansi34">Candidate ID: \-</span>
 <span class="ansi32">Request rejected successfully</span>
 
 <span class="ansi34">
 INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi34">Candidate ID: Fp</span>
+<span class="ansi34">Candidate ID: YN</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: J&amp;</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: F&quot;xBC</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: }</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: e</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: =|</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: _$^H</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: mOJs</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: Xm%$(</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: oP</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: DH/$U</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: `[s</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: !CS</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: c!&amp;</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: C(e</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &quot;#E}W</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: Q</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: tts]}</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: zSnzA</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: =</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: j</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: Nb%/</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: OyU)A</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: e!]a.</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: *./q</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &gt;</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: Dmx</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: G&amp;ft</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &#x27;H^S_</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: `ltGl</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: /wfCS</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: #</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: l){</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: *I</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: }ew</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ;</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: p</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: EN</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: eZ&quot;}_</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: @],[</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: b@e</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: F&quot;)]</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: h!{</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: `+|Xf</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: f</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: ja</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &lt;,</span>
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">
+INFO: POST for category &#x27;Null&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi34">Candidate ID: &#x27;</span>
 <span class="ansi32">Request rejected successfully</span>
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_post_invalid_name_format</td>
-          <td class="col-duration">0.18</td>
+          <td class="col-duration">0.17</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi34">Testing random integers</span>
 
-<span class="ansi34">Candidate name: 44</span>
+<span class="ansi34">Candidate name: 54</span>
 <span class="ansi34">
-INFO: POST for category &#x27;44&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;54&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 67</span>
+<span class="ansi34">Candidate name: 19</span>
 <span class="ansi34">
-INFO: POST for category &#x27;67&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;19&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 65</span>
+<span class="ansi34">Candidate name: 61</span>
 <span class="ansi34">
-INFO: POST for category &#x27;65&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;61&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 93</span>
+<span class="ansi34">Candidate name: 90</span>
 <span class="ansi34">
-INFO: POST for category &#x27;93&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 95</span>
-<span class="ansi34">
-INFO: POST for category &#x27;95&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 67</span>
-<span class="ansi34">
-INFO: POST for category &#x27;67&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 87</span>
-<span class="ansi34">
-INFO: POST for category &#x27;87&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 67</span>
-<span class="ansi34">
-INFO: POST for category &#x27;67&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 3</span>
-<span class="ansi34">
-INFO: POST for category &#x27;3&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 36</span>
-<span class="ansi34">
-INFO: POST for category &#x27;36&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 72</span>
-<span class="ansi34">
-INFO: POST for category &#x27;72&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 35</span>
-<span class="ansi34">
-INFO: POST for category &#x27;35&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 89</span>
-<span class="ansi34">
-INFO: POST for category &#x27;89&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 51</span>
-<span class="ansi34">
-INFO: POST for category &#x27;51&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 96</span>
-<span class="ansi34">
-INFO: POST for category &#x27;96&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 46</span>
-<span class="ansi34">
-INFO: POST for category &#x27;46&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 3</span>
-<span class="ansi34">
-INFO: POST for category &#x27;3&#x27;. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate name: 100</span>
-<span class="ansi34">
-INFO: POST for category &#x27;100&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;90&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
@@ -2528,33 +2453,117 @@ INFO: POST for category &#x27;18&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 44</span>
+<span class="ansi34">Candidate name: 60</span>
 <span class="ansi34">
-INFO: POST for category &#x27;44&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;60&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 26</span>
+<span class="ansi34">Candidate name: 21</span>
 <span class="ansi34">
-INFO: POST for category &#x27;26&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;21&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 4</span>
+<span class="ansi34">Candidate name: 96</span>
 <span class="ansi34">
-INFO: POST for category &#x27;4&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;96&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 92</span>
+<span class="ansi34">Candidate name: 65</span>
 <span class="ansi34">
-INFO: POST for category &#x27;92&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;65&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 98</span>
+<span class="ansi34">Candidate name: 74</span>
 <span class="ansi34">
-INFO: POST for category &#x27;98&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;74&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 28</span>
+<span class="ansi34">
+INFO: POST for category &#x27;28&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 53</span>
+<span class="ansi34">
+INFO: POST for category &#x27;53&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 74</span>
+<span class="ansi34">
+INFO: POST for category &#x27;74&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 60</span>
+<span class="ansi34">
+INFO: POST for category &#x27;60&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 89</span>
+<span class="ansi34">
+INFO: POST for category &#x27;89&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 31</span>
+<span class="ansi34">
+INFO: POST for category &#x27;31&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 24</span>
+<span class="ansi34">
+INFO: POST for category &#x27;24&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 99</span>
+<span class="ansi34">
+INFO: POST for category &#x27;99&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 77</span>
+<span class="ansi34">
+INFO: POST for category &#x27;77&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 45</span>
+<span class="ansi34">
+INFO: POST for category &#x27;45&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 100</span>
+<span class="ansi34">
+INFO: POST for category &#x27;100&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 61</span>
+<span class="ansi34">
+INFO: POST for category &#x27;61&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 8</span>
+<span class="ansi34">
+INFO: POST for category &#x27;8&#x27;. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate name: 52</span>
+<span class="ansi34">
+INFO: POST for category &#x27;52&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
@@ -2565,153 +2574,153 @@ HTTP Status Error: 400 - The server cannot or will not process the request due t
 <span class="ansi32">Request rejected successfully</span>
 <span class="ansi34">Testing random float numbers</span>
 
-<span class="ansi34">Candidate name: 75.92912679765173</span>
+<span class="ansi34">Candidate name: 56.27884438218248</span>
 <span class="ansi34">
-INFO: POST for category &#x27;75.92912679765173&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;56.27884438218248&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 9.93040445288964</span>
+<span class="ansi34">Candidate name: 64.24521322306744</span>
 <span class="ansi34">
-INFO: POST for category &#x27;9.93040445288964&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;64.24521322306744&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 30.14180880364924</span>
+<span class="ansi34">Candidate name: 39.66265482438891</span>
 <span class="ansi34">
-INFO: POST for category &#x27;30.14180880364924&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;39.66265482438891&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 50.751605890204246</span>
+<span class="ansi34">Candidate name: 31.016774020350958</span>
 <span class="ansi34">
-INFO: POST for category &#x27;50.751605890204246&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;31.016774020350958&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 83.74206608011978</span>
+<span class="ansi34">Candidate name: 80.95190301127928</span>
 <span class="ansi34">
-INFO: POST for category &#x27;83.74206608011978&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;80.95190301127928&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 63.42700400801174</span>
+<span class="ansi34">Candidate name: 4.112038465516377</span>
 <span class="ansi34">
-INFO: POST for category &#x27;63.42700400801174&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;4.112038465516377&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 23.239484010423993</span>
+<span class="ansi34">Candidate name: 22.798468865805443</span>
 <span class="ansi34">
-INFO: POST for category &#x27;23.239484010423993&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;22.798468865805443&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 44.43562471975477</span>
+<span class="ansi34">Candidate name: 95.9604547251677</span>
 <span class="ansi34">
-INFO: POST for category &#x27;44.43562471975477&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;95.9604547251677&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 1.3274733482859458</span>
+<span class="ansi34">Candidate name: 36.76666474496727</span>
 <span class="ansi34">
-INFO: POST for category &#x27;1.3274733482859458&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;36.76666474496727&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 88.11553281628059</span>
+<span class="ansi34">Candidate name: 78.7728052663523</span>
 <span class="ansi34">
-INFO: POST for category &#x27;88.11553281628059&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;78.7728052663523&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 5.782736511325226</span>
+<span class="ansi34">Candidate name: 70.98958997262052</span>
 <span class="ansi34">
-INFO: POST for category &#x27;5.782736511325226&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;70.98958997262052&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 62.91125952210431</span>
+<span class="ansi34">Candidate name: 34.01254863731174</span>
 <span class="ansi34">
-INFO: POST for category &#x27;62.91125952210431&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;34.01254863731174&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 50.618995016311416</span>
+<span class="ansi34">Candidate name: 96.36208970281288</span>
 <span class="ansi34">
-INFO: POST for category &#x27;50.618995016311416&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;96.36208970281288&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 82.54895822786405</span>
+<span class="ansi34">Candidate name: 39.48791608250977</span>
 <span class="ansi34">
-INFO: POST for category &#x27;82.54895822786405&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;39.48791608250977&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 84.69347415895805</span>
+<span class="ansi34">Candidate name: 8.285922245884802</span>
 <span class="ansi34">
-INFO: POST for category &#x27;84.69347415895805&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;8.285922245884802&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 36.78223935285707</span>
+<span class="ansi34">Candidate name: 31.693035396169698</span>
 <span class="ansi34">
-INFO: POST for category &#x27;36.78223935285707&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;31.693035396169698&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 28.026859505691636</span>
+<span class="ansi34">Candidate name: 81.38757332740767</span>
 <span class="ansi34">
-INFO: POST for category &#x27;28.026859505691636&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;81.38757332740767&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 59.82973462247394</span>
+<span class="ansi34">Candidate name: 2.809436109311525</span>
 <span class="ansi34">
-INFO: POST for category &#x27;59.82973462247394&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;2.809436109311525&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 5.583438422557386</span>
+<span class="ansi34">Candidate name: 40.61237742561017</span>
 <span class="ansi34">
-INFO: POST for category &#x27;5.583438422557386&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;40.61237742561017&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 61.65085997402574</span>
+<span class="ansi34">Candidate name: 38.97893680152429</span>
 <span class="ansi34">
-INFO: POST for category &#x27;61.65085997402574&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;38.97893680152429&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 15.665580637254017</span>
+<span class="ansi34">Candidate name: 99.93621561407696</span>
 <span class="ansi34">
-INFO: POST for category &#x27;15.665580637254017&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;99.93621561407696&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 39.23577157014429</span>
+<span class="ansi34">Candidate name: 30.63589354423324</span>
 <span class="ansi34">
-INFO: POST for category &#x27;39.23577157014429&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;30.63589354423324&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 95.09648481994358</span>
+<span class="ansi34">Candidate name: 92.21638316991145</span>
 <span class="ansi34">
-INFO: POST for category &#x27;95.09648481994358&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;92.21638316991145&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 72.95207068774286</span>
+<span class="ansi34">Candidate name: 75.0038111496044</span>
 <span class="ansi34">
-INFO: POST for category &#x27;72.95207068774286&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;75.0038111496044&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate name: 17.0196812477455</span>
+<span class="ansi34">Candidate name: 88.31340357814817</span>
 <span class="ansi34">
-INFO: POST for category &#x27;17.0196812477455&#x27;. Status Code is 400</span>
+INFO: POST for category &#x27;88.31340357814817&#x27;. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 <br/></div></td></tr></tbody>
@@ -2719,416 +2728,260 @@ HTTP Status Error: 400 - The server cannot or will not process the request due t
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_put_invalid_id_format</td>
-          <td class="col-duration">0.30</td>
+          <td class="col-duration">0.28</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-<span class="ansi34">Candidate id: G</span>
+<span class="ansi34">Candidate id: *IIi</span>
 <span class="ansi34">
-INFO: PUT for id G. Status Code is 404</span>
+INFO: PUT for id *IIi. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: Ci</span>
+<span class="ansi34">Candidate id: +*A</span>
 <span class="ansi34">
-INFO: PUT for id Ci. Status Code is 404</span>
+INFO: PUT for id +*A. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: ;U</span>
+<span class="ansi34">Candidate id: )k&#x27;{/</span>
 <span class="ansi34">
-INFO: PUT for id ;U. Status Code is 404</span>
+INFO: PUT for id )k&#x27;{/. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: #*</span>
+<span class="ansi34">Candidate id: EJz</span>
 <span class="ansi34">
-INFO: PUT for id #*. Status Code is 405</span>
+INFO: PUT for id EJz. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: j%-J</span>
+<span class="ansi34">
+INFO: PUT for id j%-J. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: wG</span>
+<span class="ansi34">
+INFO: PUT for id wG. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: hi#W</span>
+<span class="ansi34">
+INFO: PUT for id hi#W. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: ZP#-=</span>
+<span class="ansi34">
+INFO: PUT for id ZP#-=. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: i</span>
+<span class="ansi34">
+INFO: PUT for id i. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: g</span>
+<span class="ansi34">
+INFO: PUT for id g. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: H</span>
+<span class="ansi34">
+INFO: PUT for id H. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: [V</span>
+<span class="ansi34">
+INFO: PUT for id [V. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: Vey</span>
+<span class="ansi34">
+INFO: PUT for id Vey. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: B{`</span>
+<span class="ansi34">
+INFO: PUT for id B{`. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: @VE</span>
+<span class="ansi34">
+INFO: PUT for id @VE. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: k</span>
+<span class="ansi34">
+INFO: PUT for id k. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: S*psU</span>
+<span class="ansi34">
+INFO: PUT for id S*psU. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: ZW&lt;</span>
+<span class="ansi34">
+INFO: PUT for id ZW&lt;. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: CnD</span>
+<span class="ansi34">
+INFO: PUT for id CnD. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: nPc$</span>
+<span class="ansi34">
+INFO: PUT for id nPc$. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: [k^i</span>
+<span class="ansi34">
+INFO: PUT for id [k^i. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: (G=)</span>
+<span class="ansi34">
+INFO: PUT for id (G=). Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: GR</span>
+<span class="ansi34">
+INFO: PUT for id GR. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: v&amp;</span>
+<span class="ansi34">
+INFO: PUT for id v&amp;. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: &#x27;d</span>
+<span class="ansi34">
+INFO: PUT for id &#x27;d. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: U^&lt;t?</span>
+<span class="ansi34">
+INFO: PUT for id U^&lt;t?. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: !upJ</span>
+<span class="ansi34">
+INFO: PUT for id !upJ. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: v_@L$</span>
+<span class="ansi34">
+INFO: PUT for id v_@L$. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: dAKD</span>
+<span class="ansi34">
+INFO: PUT for id dAKD. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: .x</span>
+<span class="ansi34">
+INFO: PUT for id .x. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: ]Y&#x27;@K</span>
+<span class="ansi34">
+INFO: PUT for id ]Y&#x27;@K. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: #VXI</span>
+<span class="ansi34">
+INFO: PUT for id #VXI. Status Code is 405</span>
 HTTP Status Error: 405 - Unknown
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: n</span>
+<span class="ansi34">Candidate id: EEXx</span>
 <span class="ansi34">
-INFO: PUT for id n. Status Code is 404</span>
+INFO: PUT for id EEXx. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: r]f</span>
+<span class="ansi34">Candidate id: L|}</span>
 <span class="ansi34">
-INFO: PUT for id r]f. Status Code is 404</span>
+INFO: PUT for id L|}. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: oX</span>
+<span class="ansi34">Candidate id: pV{+</span>
 <span class="ansi34">
-INFO: PUT for id oX. Status Code is 404</span>
+INFO: PUT for id pV{+. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: &gt;*`(#</span>
+<span class="ansi34">Candidate id: f&gt;Lm_</span>
 <span class="ansi34">
-INFO: PUT for id &gt;*`(#. Status Code is 404</span>
+INFO: PUT for id f&gt;Lm_. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: Ot*\~</span>
+<span class="ansi34">Candidate id: PCXH</span>
 <span class="ansi34">
-INFO: PUT for id Ot*\~. Status Code is 404</span>
+INFO: PUT for id PCXH. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: w</span>
+<span class="ansi34">Candidate id: (A</span>
 <span class="ansi34">
-INFO: PUT for id w. Status Code is 404</span>
+INFO: PUT for id (A. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: +^$p</span>
+<span class="ansi34">Candidate id: x</span>
 <span class="ansi34">
-INFO: PUT for id +^$p. Status Code is 404</span>
+INFO: PUT for id x. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: T</span>
+<span class="ansi34">Candidate id: ,</span>
 <span class="ansi34">
-INFO: PUT for id T. Status Code is 404</span>
+INFO: PUT for id ,. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: %P(R</span>
+<span class="ansi34">Candidate id: %`]Ls</span>
 <span class="ansi34">
-INFO: PUT for id %P(R. Status Code is 404</span>
+INFO: PUT for id %`]Ls. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: =$i</span>
+<span class="ansi34">Candidate id: eNH</span>
 <span class="ansi34">
-INFO: PUT for id =$i. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: =h</span>
-<span class="ansi34">
-INFO: PUT for id =h. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: m</span>
-<span class="ansi34">
-INFO: PUT for id m. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: r</span>
-<span class="ansi34">
-INFO: PUT for id r. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: U</span>
-<span class="ansi34">
-INFO: PUT for id U. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: FZ</span>
-<span class="ansi34">
-INFO: PUT for id FZ. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: !</span>
-<span class="ansi34">
-INFO: PUT for id !. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: ?|QV^</span>
-<span class="ansi34">
-INFO: PUT for id ?|QV^. Status Code is 405</span>
-HTTP Status Error: 405 - Unknown
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: .</span>
-<span class="ansi34">
-INFO: PUT for id .. Status Code is 405</span>
-HTTP Status Error: 405 - Unknown
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: J</span>
-<span class="ansi34">
-INFO: PUT for id J. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: #K#kG</span>
-<span class="ansi34">
-INFO: PUT for id #K#kG. Status Code is 405</span>
-HTTP Status Error: 405 - Unknown
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: &amp;-</span>
-<span class="ansi34">
-INFO: PUT for id &amp;-. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: c</span>
-<span class="ansi34">
-INFO: PUT for id c. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: N?!My</span>
-<span class="ansi34">
-INFO: PUT for id N?!My. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: -</span>
-<span class="ansi34">
-INFO: PUT for id -. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: P&amp;</span>
-<span class="ansi34">
-INFO: PUT for id P&amp;. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: Sh{</span>
-<span class="ansi34">
-INFO: PUT for id Sh{. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: ZLk</span>
-<span class="ansi34">
-INFO: PUT for id ZLk. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: U.U~</span>
-<span class="ansi34">
-INFO: PUT for id U.U~. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: X</span>
-<span class="ansi34">
-INFO: PUT for id X. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: RnlC</span>
-<span class="ansi34">
-INFO: PUT for id RnlC. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: \@</span>
-<span class="ansi34">
-INFO: PUT for id \@. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: *b{l</span>
-<span class="ansi34">
-INFO: PUT for id *b{l. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: )%t;p</span>
-<span class="ansi34">
-INFO: PUT for id )%t;p. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: _[</span>
-<span class="ansi34">
-INFO: PUT for id _[. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: k~j$</span>
-<span class="ansi34">
-INFO: PUT for id k~j$. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: s[)</span>
-<span class="ansi34">
-INFO: PUT for id s[). Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: p?`</span>
-<span class="ansi34">
-INFO: PUT for id p?`. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: fF\W</span>
-<span class="ansi34">
-INFO: PUT for id fF\W. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: _R</span>
-<span class="ansi34">
-INFO: PUT for id _R. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: e</span>
-<span class="ansi34">
-INFO: PUT for id e. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: v)(</span>
-<span class="ansi34">
-INFO: PUT for id v)(. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: MYeM</span>
-<span class="ansi34">
-INFO: PUT for id MYeM. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: TUk{</span>
-<span class="ansi34">
-INFO: PUT for id TUk{. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: nKO</span>
-<span class="ansi34">
-INFO: PUT for id nKO. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: =dx</span>
-<span class="ansi34">
-INFO: PUT for id =dx. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: ucs</span>
-<span class="ansi34">
-INFO: PUT for id ucs. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: m&amp;&amp;</span>
-<span class="ansi34">
-INFO: PUT for id m&amp;&amp;. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: f?KL</span>
-<span class="ansi34">
-INFO: PUT for id f?KL. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: M</span>
-<span class="ansi34">
-INFO: PUT for id M. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: ksg&quot;S</span>
-<span class="ansi34">
-INFO: PUT for id ksg&quot;S. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: r&quot;i</span>
-<span class="ansi34">
-INFO: PUT for id r&quot;i. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: sM</span>
-<span class="ansi34">
-INFO: PUT for id sM. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: Eu_C</span>
-<span class="ansi34">
-INFO: PUT for id Eu_C. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: ]$</span>
-<span class="ansi34">
-INFO: PUT for id ]$. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: Uh</span>
-<span class="ansi34">
-INFO: PUT for id Uh. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: eI</span>
-<span class="ansi34">
-INFO: PUT for id eI. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: iGbws</span>
-<span class="ansi34">
-INFO: PUT for id iGbws. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: @,&quot;(</span>
-<span class="ansi34">
-INFO: PUT for id @,&quot;(. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: Q$/]</span>
-<span class="ansi34">
-INFO: PUT for id Q$/]. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: R&#x27;MA&quot;</span>
-<span class="ansi34">
-INFO: PUT for id R&#x27;MA&quot;. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: MC~CZ</span>
-<span class="ansi34">
-INFO: PUT for id MC~CZ. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: ,Sgv</span>
-<span class="ansi34">
-INFO: PUT for id ,Sgv. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: eDq[</span>
-<span class="ansi34">
-INFO: PUT for id eDq[. Status Code is 404</span>
-HTTP Status Error: 404 - The requested resource could not be found
-<span class="ansi32">Request rejected successfully</span>
-
-<span class="ansi34">Candidate id: eIV#</span>
-<span class="ansi34">
-INFO: PUT for id eIV#. Status Code is 404</span>
+INFO: PUT for id eNH. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
@@ -3138,189 +2991,345 @@ INFO: PUT for id N. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: aF</span>
+<span class="ansi34">Candidate id: &quot;</span>
 <span class="ansi34">
-INFO: PUT for id aF. Status Code is 404</span>
+INFO: PUT for id &quot;. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: DI</span>
+<span class="ansi34">Candidate id: k</span>
 <span class="ansi34">
-INFO: PUT for id DI. Status Code is 404</span>
+INFO: PUT for id k. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: ^\</span>
+<span class="ansi34">Candidate id: dP</span>
 <span class="ansi34">
-INFO: PUT for id ^\. Status Code is 404</span>
+INFO: PUT for id dP. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: FBwG</span>
+<span class="ansi34">Candidate id: GuV&lt;</span>
 <span class="ansi34">
-INFO: PUT for id FBwG. Status Code is 404</span>
+INFO: PUT for id GuV&lt;. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: REi</span>
+<span class="ansi34">Candidate id: /e*</span>
 <span class="ansi34">
-INFO: PUT for id REi. Status Code is 404</span>
+INFO: PUT for id /e*. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: &gt;YRkm</span>
+<span class="ansi34">Candidate id: _-#/</span>
 <span class="ansi34">
-INFO: PUT for id &gt;YRkm. Status Code is 404</span>
+INFO: PUT for id _-#/. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: ]\jo</span>
+<span class="ansi34">Candidate id: B&lt;</span>
 <span class="ansi34">
-INFO: PUT for id ]\jo. Status Code is 404</span>
+INFO: PUT for id B&lt;. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: gt</span>
+<span class="ansi34">Candidate id: k]Z</span>
 <span class="ansi34">
-INFO: PUT for id gt. Status Code is 404</span>
+INFO: PUT for id k]Z. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: !)</span>
+<span class="ansi34">Candidate id: n{</span>
 <span class="ansi34">
-INFO: PUT for id !). Status Code is 404</span>
+INFO: PUT for id n{. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: ^o-</span>
+<span class="ansi34">Candidate id: [</span>
 <span class="ansi34">
-INFO: PUT for id ^o-. Status Code is 404</span>
+INFO: PUT for id [. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: ,(Y&lt;(</span>
+<span class="ansi34">Candidate id: u</span>
 <span class="ansi34">
-INFO: PUT for id ,(Y&lt;(. Status Code is 404</span>
+INFO: PUT for id u. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: !</span>
+<span class="ansi34">Candidate id: fq</span>
 <span class="ansi34">
-INFO: PUT for id !. Status Code is 404</span>
+INFO: PUT for id fq. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: &#x27;hq</span>
+<span class="ansi34">Candidate id: &gt;;</span>
 <span class="ansi34">
-INFO: PUT for id &#x27;hq. Status Code is 404</span>
+INFO: PUT for id &gt;;. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: kukc!</span>
+<span class="ansi34">Candidate id: dG</span>
 <span class="ansi34">
-INFO: PUT for id kukc!. Status Code is 404</span>
+INFO: PUT for id dG. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: Elu{`</span>
+<span class="ansi34">Candidate id: `qeZ</span>
 <span class="ansi34">
-INFO: PUT for id Elu{`. Status Code is 404</span>
+INFO: PUT for id `qeZ. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: O</span>
+<span class="ansi34">Candidate id: bcC</span>
 <span class="ansi34">
-INFO: PUT for id O. Status Code is 404</span>
+INFO: PUT for id bcC. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: p=</span>
+<span class="ansi34">Candidate id: |Y&amp;eF</span>
 <span class="ansi34">
-INFO: PUT for id p=. Status Code is 404</span>
+INFO: PUT for id |Y&amp;eF. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: s,bZ</span>
+<span class="ansi34">Candidate id: v</span>
 <span class="ansi34">
-INFO: PUT for id s,bZ. Status Code is 404</span>
+INFO: PUT for id v. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: PJ</span>
+<span class="ansi34">Candidate id: P</span>
 <span class="ansi34">
-INFO: PUT for id PJ. Status Code is 404</span>
+INFO: PUT for id P. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: ,_O!{</span>
+<span class="ansi34">Candidate id: M=T</span>
 <span class="ansi34">
-INFO: PUT for id ,_O!{. Status Code is 404</span>
+INFO: PUT for id M=T. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: op`*k</span>
+<span class="ansi34">Candidate id: yp</span>
 <span class="ansi34">
-INFO: PUT for id op`*k. Status Code is 404</span>
+INFO: PUT for id yp. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: C~</span>
+<span class="ansi34">Candidate id: nQf</span>
 <span class="ansi34">
-INFO: PUT for id C~. Status Code is 404</span>
+INFO: PUT for id nQf. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: -EkTX</span>
+<span class="ansi34">Candidate id: Eo&gt;g</span>
 <span class="ansi34">
-INFO: PUT for id -EkTX. Status Code is 404</span>
+INFO: PUT for id Eo&gt;g. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: c\</span>
+<span class="ansi34">Candidate id: pRk</span>
 <span class="ansi34">
-INFO: PUT for id c\. Status Code is 404</span>
+INFO: PUT for id pRk. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: JP%@</span>
+<span class="ansi34">Candidate id: x~j</span>
 <span class="ansi34">
-INFO: PUT for id JP%@. Status Code is 404</span>
+INFO: PUT for id x~j. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: VYCwc</span>
+<span class="ansi34">Candidate id: ZHTRt</span>
 <span class="ansi34">
-INFO: PUT for id VYCwc. Status Code is 404</span>
+INFO: PUT for id ZHTRt. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: t</span>
+<span class="ansi34">Candidate id: Nj</span>
 <span class="ansi34">
-INFO: PUT for id t. Status Code is 404</span>
+INFO: PUT for id Nj. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: N$</span>
+<span class="ansi34">Candidate id: co[.</span>
 <span class="ansi34">
-INFO: PUT for id N$. Status Code is 404</span>
+INFO: PUT for id co[.. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: zrm</span>
+<span class="ansi34">Candidate id: BLw</span>
 <span class="ansi34">
-INFO: PUT for id zrm. Status Code is 404</span>
+INFO: PUT for id BLw. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: %d\_#</span>
+<span class="ansi34">Candidate id: }z</span>
 <span class="ansi34">
-INFO: PUT for id %d\_#. Status Code is 404</span>
+INFO: PUT for id }z. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 
-<span class="ansi34">Candidate id: |!X</span>
+<span class="ansi34">Candidate id: &lt;Wd</span>
 <span class="ansi34">
-INFO: PUT for id |!X. Status Code is 404</span>
+INFO: PUT for id &lt;Wd. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: p</span>
+<span class="ansi34">
+INFO: PUT for id p. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: I</span>
+<span class="ansi34">
+INFO: PUT for id I. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: j`^L</span>
+<span class="ansi34">
+INFO: PUT for id j`^L. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: d$e</span>
+<span class="ansi34">
+INFO: PUT for id d$e. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: k&#x27;-.</span>
+<span class="ansi34">
+INFO: PUT for id k&#x27;-.. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: )</span>
+<span class="ansi34">
+INFO: PUT for id ). Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: vu</span>
+<span class="ansi34">
+INFO: PUT for id vu. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: ]KbOh</span>
+<span class="ansi34">
+INFO: PUT for id ]KbOh. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: Zh\</span>
+<span class="ansi34">
+INFO: PUT for id Zh\. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: s</span>
+<span class="ansi34">
+INFO: PUT for id s. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: **BT</span>
+<span class="ansi34">
+INFO: PUT for id **BT. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: @Q+O$</span>
+<span class="ansi34">
+INFO: PUT for id @Q+O$. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: &lt;&gt;</span>
+<span class="ansi34">
+INFO: PUT for id &lt;&gt;. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: UtsA,</span>
+<span class="ansi34">
+INFO: PUT for id UtsA,. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: F&#x27;c</span>
+<span class="ansi34">
+INFO: PUT for id F&#x27;c. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: MCb</span>
+<span class="ansi34">
+INFO: PUT for id MCb. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: }.U</span>
+<span class="ansi34">
+INFO: PUT for id }.U. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: yhR</span>
+<span class="ansi34">
+INFO: PUT for id yhR. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: *s</span>
+<span class="ansi34">
+INFO: PUT for id *s. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: mNn</span>
+<span class="ansi34">
+INFO: PUT for id mNn. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: EnzT?</span>
+<span class="ansi34">
+INFO: PUT for id EnzT?. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: GoI</span>
+<span class="ansi34">
+INFO: PUT for id GoI. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: p</span>
+<span class="ansi34">
+INFO: PUT for id p. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: [aQI</span>
+<span class="ansi34">
+INFO: PUT for id [aQI. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: ;&lt;</span>
+<span class="ansi34">
+INFO: PUT for id ;&lt;. Status Code is 404</span>
+HTTP Status Error: 404 - The requested resource could not be found
+<span class="ansi32">Request rejected successfully</span>
+
+<span class="ansi34">Candidate id: ml{</span>
+<span class="ansi34">
+INFO: PUT for id ml{. Status Code is 404</span>
 HTTP Status Error: 404 - The requested resource could not be found
 <span class="ansi32">Request rejected successfully</span>
 <br/></div></td></tr></tbody>
@@ -3328,75 +3337,135 @@ HTTP Status Error: 404 - The requested resource could not be found
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_001.py::Test_REST::test_Blog_categories_put_invalid_name_format</td>
-          <td class="col-duration">0.34</td>
+          <td class="col-duration">0.37</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/><span class="ansi34">Testing random integers</span>
 
-Updating Category with id 2 to 82
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 37
+Updating Category with id 1 to 40
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 1 to 59
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 87
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 75
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 75
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 75
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 94
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 37
+Updating Category with id 3 to 23
 <span class="ansi34">
 INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 3 to 75
+Updating Category with id 3 to 7
 <span class="ansi34">
 INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 21
+Updating Category with id 1 to 91
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 100
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 75
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 58
 <span class="ansi34">
 INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 36
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 42
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 29
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 27
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 21
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 72
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 54
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 94
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 67
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 29
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 17
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 25
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 57
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 28
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
@@ -3406,232 +3475,172 @@ INFO: PUT for id 2. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 1 to 1
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 80
+Updating Category with id 3 to 12
 <span class="ansi34">
 INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 3 to 59
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 7
+Updating Category with id 1 to 3
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 95
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 34
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 52
+Updating Category with id 1 to 40
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 14
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 70
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 41
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 71
-<span class="ansi34">
-INFO: PUT for id 1. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 91
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 85
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 <span class="ansi34">Testing random float numbers</span>
 
-Updating Category with id 1 to 41.50926385120235
+Updating Category with id 2 to 76.0744239636072
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 99.30295342184759
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 43.70383357723573
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 0.19161026791408853
+Updating Category with id 3 to 72.35438182551009
 <span class="ansi34">
 INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 3 to 6.032237937215401
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 73.52212887851415
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 80.93477498522451
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 4.800812661702025
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 53.09884902397817
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 34.752207976603934
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 33.675363494615915
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 25.54279490273007
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 30.575087461744733
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 79.66172855206773
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 13.623227393226234
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 66.9147982811283
-<span class="ansi34">
-INFO: PUT for id 3. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 28.65289406715652
+Updating Category with id 1 to 59.10551524569762
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 98.02927116301908
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 3 to 49.98250284099659
+Updating Category with id 3 to 85.45493617564799
 <span class="ansi34">
 INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 1 to 48.991414527047425
+Updating Category with id 3 to 83.51286787264586
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 39.23470331369591
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 46.94976844075865
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 72.82422563250043
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 6.320746342720607
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 12.36216378612749
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 84.60461181884209
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 47.61343663582518
+Updating Category with id 2 to 15.69546716742084
 <span class="ansi34">
 INFO: PUT for id 2. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 1 to 20.036296650704244
+Updating Category with id 3 to 42.413089033774106
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 75.65641846732825
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 43.67398079402023
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 26.070016823506116
+Updating Category with id 3 to 6.822396901258399
 <span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
+INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 
-Updating Category with id 2 to 15.73946503140624
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 2 to 43.83376593440418
-<span class="ansi34">
-INFO: PUT for id 2. Status Code is 400</span>
-HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
-<span class="ansi32">Request rejected successfully</span>
-
-Updating Category with id 1 to 57.196628067801605
+Updating Category with id 1 to 80.94930707489989
 <span class="ansi34">
 INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 42.21427213866722
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 32.616142898259206
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 80.16691336485577
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 1 to 81.03507500755343
+<span class="ansi34">
+INFO: PUT for id 1. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 2 to 45.79559193766267
+<span class="ansi34">
+INFO: PUT for id 2. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 85.07781754406949
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
+HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
+<span class="ansi32">Request rejected successfully</span>
+
+Updating Category with id 3 to 41.292907201533836
+<span class="ansi34">
+INFO: PUT for id 3. Status Code is 400</span>
 HTTP Status Error: 400 - The server cannot or will not process the request due to an apparent client error
 <span class="ansi32">Request rejected successfully</span>
 <br/></div></td></tr></tbody></table></body></html>

@@ -4,6 +4,8 @@ from urllib.parse import urljoin
 from tester_interface.cPrint import cPrint, cprint, cprint_err, cprint_suc, cprint_info
 import time
 import random
+from shutil import copyfile
+import os
 
 class RestTester():
     
@@ -58,6 +60,8 @@ class RestTester():
         with open(config_file, 'r') as _f:
             config = json.load(_f)
         self.base_url = config['base_url']
+        self.default_db = config['default_db_path']
+        self.db_path    = config['database_path']
 
     ###########################################################################
     # 'Private' functions
@@ -112,7 +116,7 @@ class RestTester():
         
         Args:
             id (int): Other data types allowed for testing purposes
-            name (string): Other data types allowed for testing purposes
+            name (str): Other data types allowed for testing purposes
         Returns:
             requests.models.Response: Request object from requests library
         """
@@ -130,13 +134,9 @@ class RestTester():
 
         Args:
             id (int)
-        Raises:
-            TypeError: If id is not an integer
         Returns:
             requests.models.Response: Request object from requests library
         """
-        if type(id) != int:
-            raise TypeError("id is of type {0}, must be integer.".format(type(id)))
         _url = urljoin(self.base_url, self.API_CATEGORIES)
         return requests.delete(urljoin(_url, str(id)))
     
@@ -153,10 +153,52 @@ class RestTester():
             'name': name
         }
         return requests.put(url=_url, json=_data)
+    
+    def get_blog_posts(self):
+        """
+        Returns list of blog posts
+        
+        Returns:
+            requests.models.Response: Request object from requests library
+        """
+        _url = urljoin(self.base_url, self.API_POSTS)
+        return requests.get(_url)
+    
+    def post_blog_posts(self, payload):
+        """
+        Creates new blog post
+        
+        Args:
+            payload (dict)
+        Returns:
+            requests.models.Response: Request object from requests library
+        """
+        _url = urljoin(self.base_url, self.API_CATEGORIES)
+        return requests.post(_url, json=payload)
+    
+    def delete_blog_post(self, id):
+        """
+        Deletes blog post
+
+        Args:
+            id (int)
+        Returns:
+            requests.models.Response: Request object from requests library
+        """
+        _url = urljoin(self.base_url, self.API_CATEGORIES)
+        return requests.delete(urljoin(_url, str(id)))
 
     ###########################################################################
     # Basic Tests
     ###########################################################################
+    def reset_database_to_default(self):
+        """
+        Copies default database to the path of the database being used by the
+        API
+        """
+        _src = os.path.abspath(self.default_db)
+        _dst = os.path.abspath(self.db_path)
+        copyfile(_src, _dst)
     ###########################################################################
     # Basic functional testing
     def test_blog_categories_GET(self):
@@ -350,4 +392,11 @@ class RestTester():
         else:
             cprint_err("ERROR: Invalid put request was not rejected")
             return self.ERR_TEST_FAILED
+    
+    # TBD add test for delete
+
+    ###########################################################################
+    # Basic Positive Tests for blog posts
+    # CRUD functions of blog posts not needed to be tested
+
 

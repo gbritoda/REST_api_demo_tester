@@ -18,7 +18,9 @@ class Test_REST():
     def _request_test_interface(self):
         self.Tester = RestTester(os.path.abspath('./config.json'))
 
-#TBD add a test to set up the REST api if not already up
+###############################################################################
+    def test_RESET_DATABASE_TO_DEFAULT(self):
+        self.Tester.reset_database_to_default()
 
 ###############################################################################
     def test_Blog_categories_GET(self):
