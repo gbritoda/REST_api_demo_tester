@@ -46,6 +46,20 @@ class Test_REST():
         [(4, "Category name"),
         (5, "A category name that is quite longer"),
         (6, "Category@name-with1symbols.")])
+    def test_Blog_categories_post_and_get_and_delete(self, name):
+        """
+        POST blog category, GET it and check that data is consistent, then DELETE
+        Mainly to test POST and GET
+        """
+        print_test_title("Blog Categories - POST, GET, DELETE")
+        assert self.Tester.test_blog_categories_post__get_by_id__delete(id=id, name=name) \
+            == self.Tester.ERR_NONE, "Failed in one of the steps. Please check report for more details"
+
+###############################################################################
+    @pytest.mark.parametrize("id,name",
+        [(4, "Category name"),
+        (5, "A category name that is quite longer"),
+        (6, "Category@name-with1symbols.")])
     def test_Blog_categories_post__delete__get(self, id, name):
         """
         POST blog category, DELETE it, and use GET by category id to confirm
@@ -189,7 +203,7 @@ class Test_REST():
         
         assert success, f"{n_failed}/{n_test_cases} test cases failed, please check report"
 
-    def test_Blog_categories_deleve_invalid_id_format(self):
+    def test_Blog_categories_delete_invalid_id_format(self):
         """
         Tests DELETE with multiple non integer ids and checks if they are rejected
         """

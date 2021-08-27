@@ -150,8 +150,6 @@ class RestTester():
         return requests.delete(urljoin(_url, str(id)))
     
     def get_category_by_id(self, id):
-        if type(id) != int:
-            raise TypeError("id is of type {0}, must be integer.".format(type(id)))
         _url = urljoin(self.base_url, self.API_CATEGORIES)
         return requests.get(urljoin(_url, str(id)))
 
@@ -281,6 +279,40 @@ class RestTester():
         if post_obj['name'] != name:
             cprint_err("\nERROR: POSTED category name does not match with category name obtained by GET")
             cprint_err(f"POST: \"{name}\" \n GET: \"{post_obj['name']}\" \n")
+            ret = self.ERR_INVALID_FIELD
+        
+        req = self.delete_categories(id)
+        cprint_info(f"\nINFO: DELETE ID {id}. Status Code is {req.status_code}")
+        http_ret = self.__check_request_status(req)
+        
+        # If test succeeded, but DELETE request failed
+        if ret == self.ERR_NONE and http_ret != self.ERR_NONE:
+            return http_ret
+        else:
+            return ret
+
+    def test_blog_categories_post__get_by_id__delete(self, id, name):
+        print(f"Posting Category: \"{name}\"")
+        req = self.post_categories(id=id, name=name)
+        cprint_info(f"\nINFO: POST. Status Code is {req.status_code}")
+        ret = self.__check_request_status(req)
+        if ret != self.ERR_NONE:
+            return ret
+
+        req = self.get_category_by_id(id)
+        cprint_info(f"\nINFO: GET. Status Code is {req.status_code}")
+        ret = self.__check_request_status(req)
+        if ret != self.ERR_NONE:
+            return ret
+        resp = req.json()
+
+        if resp['name'] != name:
+            cprint_err("\nERROR: POSTED category name does not match with category name obtained by GET")
+            cprint_err(f"POST: \"{name}\" \n GET: \"{resp['name']}\" \n")
+            ret = self.ERR_INVALID_FIELD
+        if resp['id'] != id:
+            cprint_err("\nERROR: POSTED category id does not match with category id obtained by GET")
+            cprint_err(f"POST: \"{id}\" \n GET: \"{resp['id']}\" \n")
             ret = self.ERR_INVALID_FIELD
         
         req = self.delete_categories(id)
