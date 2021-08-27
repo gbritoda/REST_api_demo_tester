@@ -6,6 +6,7 @@ import time
 import random
 from shutil import copyfile
 import os
+from math import ceil
 
 class RestTester():
     
@@ -50,6 +51,14 @@ class RestTester():
         ERR_HTTP_TIMEOUT: "The server timed out waiting for the request",
         ERR_HTTP_CONFLICT: "Request could not be processed because of conflict"\
             + " in the current state of the resource"
+    }
+
+    # Default categories and their ids
+    default_categories = {
+        #ID : Category
+        1: "Sci-Fi",
+        2: "Politics",
+        3: "Tech"
     }
 
     # Paths
@@ -154,7 +163,7 @@ class RestTester():
         }
         return requests.put(url=_url, json=_data)
     
-    def get_blog_posts(self):
+    def get_blog_posts(self, params=None):
         """
         Returns list of blog posts
         
@@ -162,7 +171,7 @@ class RestTester():
             requests.models.Response: Request object from requests library
         """
         _url = urljoin(self.base_url, self.API_POSTS)
-        return requests.get(_url)
+        return requests.get(_url, params=params)
     
     def post_blog_posts(self, payload):
         """
@@ -393,10 +402,49 @@ class RestTester():
             cprint_err("ERROR: Invalid put request was not rejected")
             return self.ERR_TEST_FAILED
     
-    # TBD add test for delete
+    def test_blog_categories_delete_invalid_id(self, invalid_id):
+        ret = self.test_blog_categories_DELETE(invalid_id)
+
+        if self.__is_html_error(ret):
+            cprint_suc("Request rejected successfully")
+            return self.ERR_NONE
+        else:
+            cprint_err("ERROR: Invalid post request was not rejected")
+            return self.ERR_TEST_FAILED
+    
+
 
     ###########################################################################
     # Basic Positive Tests for blog posts
     # CRUD functions of blog posts not needed to be tested
+    def test_blog_post_GET(self, page=1, per_page=10):
 
+        self.reset_database_to_default()
+        ret = self.ERR_NONE
+        params = {}
+        params['page'] = int(page)
+        params['per_page'] = int(per_page)
+        req = self.get_blog_posts(params)
+        ret = self.__check_request_status(req)
+        if ret != self.ERR_NONE:
+            return ret
+        resp = req.json()
+            
+        if resp['page'] != page:
+            ret = self.ERR_INVALID_FIELD
+            cprint_err(f"ERROR: Invalid 'page' field. Should be {page}, is {resp['page']}")
+        if resp['per_page'] != per_page:
+            ret = self.ERR_INVALID_FIELD
+            cprint_err(f"ERROR: Invalid 'per_page' field. Should be {per_page}, is {resp['per_page']}")
+        if resp['per_page']*resp['pages'] < resp['total']:
+            ret = self.ERR_INVALID_FIELD
+            cprint_err("ERROR: Post number calculations are off.")
+            cprint_err(f"Total amount of bigger than can be shown (per_page*pages)")
+        if resp['pages'] != ceil(resp['total']/resp['per_page']):
+            ret = self.ERR_INVALID_FIELD
+            cprint_err("ERROR: Pages calculations are off.")
+            cprint_err(f"Total amount is {resp['pages']}")
+            cprint_err(f"Should be {resp['total']/resp['per_page']}")
+            cprint_err(f"Considering: Total={resp['total']}, per_page={resp['per_page']}")
+        return ret
 

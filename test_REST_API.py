@@ -76,6 +76,7 @@ class Test_REST():
         """
         Tests POST with multiple non integer ids and checks if they are rejected
         """
+        print_test_title("Blog Categories - POST Invalid id format")
         random.seed(time.time())
         n_test_cases = 100
         # Generating random junk of strings with no digits
@@ -93,21 +94,22 @@ class Test_REST():
             if ret != self.Tester.ERR_NONE:
                 success = False
                 n_failed += 1
-        assert success, f"{n_failed} test cases failed, please check the test report"
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check the test report"
 
 ###############################################################################
     def test_Blog_categories_post_invalid_name_format(self):
         """
         Tests POST with invalid data types and checks if they are rejected
         """
+        print_test_title("Blog Categories - POST Invalid name format")
         random.seed(time.time())
-        n_tests_cases = 50
+        n_test_cases = 50
         success = True
         n_failed = 0
 
         # Integers
         cprint_info("Testing random integers")
-        for i in range(n_tests_cases//2):
+        for i in range(n_test_cases//2):
             print("")
             invalid_name = random.randint(0, 100)
             ret = \
@@ -117,7 +119,7 @@ class Test_REST():
         
         # Floats
         cprint_info("Testing random float numbers")
-        for i in range(n_tests_cases//2):
+        for i in range(n_test_cases//2):
             print("")
             invalid_name = random.random() * 100
             ret = \
@@ -126,13 +128,14 @@ class Test_REST():
                 sucess = False
                 n_failed += 1
         
-        assert success, "{n_failed} test cases failed, please check report"
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check report"
         
 ###############################################################################
     def test_Blog_categories_put_invalid_id_format(self):
         """
         Tests PUT with multiple non integer ids and checks if they are rejected
         """
+        print_test_title("Blog Categories - PUT Invalid id format")
         random.seed(time.time())
         n_test_cases = 100
         # Generating random junk of strings with no digits
@@ -150,21 +153,22 @@ class Test_REST():
             if ret != self.Tester.ERR_NONE:
                 success = False
                 n_failed += 1
-        assert success, f"{n_failed} test cases failed, please check the test report"
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check the test report"
 
-
+###############################################################################
     def test_Blog_categories_put_invalid_name_format(self):
         """
         Tests PUT with invalid data types and checks if they are rejected
         """
+        print_test_title("Blog Categories - PUT Invalid name format")
         random.seed(time.time())
-        n_tests_cases = 50
+        n_test_cases = 50
         success = True
         n_failed = 0
 
         # Integers
         cprint_info("Testing random integers")
-        for i in range(n_tests_cases//2):
+        for i in range(n_test_cases//2):
             print("")
             invalid_name = random.randint(0, 100)
             ret = \
@@ -174,7 +178,7 @@ class Test_REST():
         
         # Floats
         cprint_info("Testing random float numbers")
-        for i in range(n_tests_cases//2):
+        for i in range(n_test_cases//2):
             print("")
             invalid_name = random.random() * 100
             ret = \
@@ -183,4 +187,55 @@ class Test_REST():
                 sucess = False
                 n_failed += 1
         
-        assert success, "{n_failed} test cases failed, please check report"
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check report"
+
+    def test_Blog_categories_deleve_invalid_id_format(self):
+        """
+        Tests DELETE with multiple non integer ids and checks if they are rejected
+        """
+        print_test_title("Blog Categories - DELETE Invalid id format")
+        random.seed(time.time())
+        n_test_cases = 100
+        # Generating random junk of strings with no digits
+        _chars = string.ascii_lowercase + string.ascii_uppercase + string.punctuation
+        _chars = _chars.replace(':','')
+        success = True
+        n_failed = 0
+
+        for i in range(n_test_cases):
+            print("")
+            id_len = random.randint(1,5) # Random length between 1 and 5
+            candidate_id = "".join([random.choice(_chars) for i in range(id_len)])
+            ret = \
+                self.Tester.test_blog_categories_delete_invalid_id(candidate_id)
+            if ret != self.Tester.ERR_NONE:
+                success = False
+                n_failed += 1
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check the test report"
+
+
+###############################################################################
+# Basic Positive Tests for blog posts
+# Only checking some information. No testing of actual CRUD functions
+
+    def test_Blog_post_GET(self):
+        """
+        Changes the values of per_page and page and checks if it's consistent
+        """
+        print_test_title("Blog posts - GET")
+        n_test_cases = 100
+        random.seed(time.time())
+        n_failed = 0
+        success = True
+        
+        for i in range(n_test_cases):
+            page = random.randint(1,50)
+            per_page = random.randint(1,50)
+
+            ret = self.Tester.test_blog_post_GET(page=page, per_page=per_page)
+            if ret != self.Tester.ERR_NONE:
+                success = False
+                n_failed += 1
+        
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check report"
+
