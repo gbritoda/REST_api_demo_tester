@@ -4,6 +4,9 @@ from urllib.parse import urljoin
 from tester_interface.cPrint import cPrint, cprint, cprint_err, cprint_suc, cprint_info
 import time
 import random
+from shutil import copyfile
+import os
+from math import ceil
 
 class RestTester():
     
@@ -50,6 +53,14 @@ class RestTester():
             + " in the current state of the resource"
     }
 
+    # Default categories and their ids
+    default_categories = {
+        #ID : Category
+        1: "Sci-Fi",
+        2: "Politics",
+        3: "Tech"
+    }
+
     # Paths
     API_CATEGORIES = "/api/blog/categories/"
     API_POSTS      = "/api/blog/posts/"
@@ -58,6 +69,8 @@ class RestTester():
         with open(config_file, 'r') as _f:
             config = json.load(_f)
         self.base_url = config['base_url']
+        self.default_db = config['default_db_path']
+        self.db_path    = config['database_path']
 
     ###########################################################################
     # 'Private' functions
@@ -112,7 +125,7 @@ class RestTester():
         
         Args:
             id (int): Other data types allowed for testing purposes
-            name (string): Other data types allowed for testing purposes
+            name (str): Other data types allowed for testing purposes
         Returns:
             requests.models.Response: Request object from requests library
         """
@@ -130,13 +143,9 @@ class RestTester():
 
         Args:
             id (int)
-        Raises:
-            TypeError: If id is not an integer
         Returns:
             requests.models.Response: Request object from requests library
         """
-        if type(id) != int:
-            raise TypeError("id is of type {0}, must be integer.".format(type(id)))
         _url = urljoin(self.base_url, self.API_CATEGORIES)
         return requests.delete(urljoin(_url, str(id)))
     
@@ -153,10 +162,52 @@ class RestTester():
             'name': name
         }
         return requests.put(url=_url, json=_data)
+    
+    def get_blog_posts(self, params=None):
+        """
+        Returns list of blog posts
+        
+        Returns:
+            requests.models.Response: Request object from requests library
+        """
+        _url = urljoin(self.base_url, self.API_POSTS)
+        return requests.get(_url, params=params)
+    
+    def post_blog_posts(self, payload):
+        """
+        Creates new blog post
+        
+        Args:
+            payload (dict)
+        Returns:
+            requests.models.Response: Request object from requests library
+        """
+        _url = urljoin(self.base_url, self.API_CATEGORIES)
+        return requests.post(_url, json=payload)
+    
+    def delete_blog_post(self, id):
+        """
+        Deletes blog post
+
+        Args:
+            id (int)
+        Returns:
+            requests.models.Response: Request object from requests library
+        """
+        _url = urljoin(self.base_url, self.API_CATEGORIES)
+        return requests.delete(urljoin(_url, str(id)))
 
     ###########################################################################
     # Basic Tests
     ###########################################################################
+    def reset_database_to_default(self):
+        """
+        Copies default database to the path of the database being used by the
+        API
+        """
+        _src = os.path.abspath(self.default_db)
+        _dst = os.path.abspath(self.db_path)
+        copyfile(_src, _dst)
     ###########################################################################
     # Basic functional testing
     def test_blog_categories_GET(self):
@@ -350,4 +401,50 @@ class RestTester():
         else:
             cprint_err("ERROR: Invalid put request was not rejected")
             return self.ERR_TEST_FAILED
+    
+    def test_blog_categories_delete_invalid_id(self, invalid_id):
+        ret = self.test_blog_categories_DELETE(invalid_id)
+
+        if self.__is_html_error(ret):
+            cprint_suc("Request rejected successfully")
+            return self.ERR_NONE
+        else:
+            cprint_err("ERROR: Invalid post request was not rejected")
+            return self.ERR_TEST_FAILED
+    
+
+
+    ###########################################################################
+    # Basic Positive Tests for blog posts
+    # CRUD functions of blog posts not needed to be tested
+    def test_blog_post_GET(self, page=1, per_page=10):
+
+        self.reset_database_to_default()
+        ret = self.ERR_NONE
+        params = {}
+        params['page'] = int(page)
+        params['per_page'] = int(per_page)
+        req = self.get_blog_posts(params)
+        ret = self.__check_request_status(req)
+        if ret != self.ERR_NONE:
+            return ret
+        resp = req.json()
+            
+        if resp['page'] != page:
+            ret = self.ERR_INVALID_FIELD
+            cprint_err(f"ERROR: Invalid 'page' field. Should be {page}, is {resp['page']}")
+        if resp['per_page'] != per_page:
+            ret = self.ERR_INVALID_FIELD
+            cprint_err(f"ERROR: Invalid 'per_page' field. Should be {per_page}, is {resp['per_page']}")
+        if resp['per_page']*resp['pages'] < resp['total']:
+            ret = self.ERR_INVALID_FIELD
+            cprint_err("ERROR: Post number calculations are off.")
+            cprint_err(f"Total amount of bigger than can be shown (per_page*pages)")
+        if resp['pages'] != ceil(resp['total']/resp['per_page']):
+            ret = self.ERR_INVALID_FIELD
+            cprint_err("ERROR: Pages calculations are off.")
+            cprint_err(f"Total amount is {resp['pages']}")
+            cprint_err(f"Should be {resp['total']/resp['per_page']}")
+            cprint_err(f"Considering: Total={resp['total']}, per_page={resp['per_page']}")
+        return ret
 
