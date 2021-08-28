@@ -11,7 +11,7 @@ This repo was created as a solution for the following challenge:
 I recommend two options:
 
 * Switch to **flask-restx** for a proper fix, but that could prove changing a lot of the code
-* Add **Flask==1.1.1** to the dependencies (What I did). Fixing a compatible version of Flask
+* Add **Flask==1.1.1** to the dependencies (What I did). Forcing a compatible version of Flask
 
 For the latter, please check my changes to:
 * ./rest_api_demo-techtest1.2/requirements.txt
@@ -76,6 +76,8 @@ py.test test_REST_API.py -v --html=report.html --self-contained-html
 
 Rewrites the db.sqlite file to a default stage
 
+### Positive testing
+Tests basic functionality
 #### GET Blog categories
 * Sends a GET request for /api/blog/categories
 * Checks HTTP response code
@@ -96,8 +98,6 @@ Rewrites the db.sqlite file to a default stage
 #### POST, GET by id, and DELETE Blog Categories
 Same as above but using GET for the following endpoint:
 * /blog/categories/{id}
-
-
 
 #### POST, DELETE and GET Blog categories
 * Posts a blog category
@@ -120,7 +120,15 @@ Same as above but using GET for the following endpoint:
 * 4, "Category name"
 * 5, "A category name that is quite longer"
 * 6, "Category@name-with1symbols."+
-  
+
+### Negative testing
+The application should gracefully handle the problem.
+> Tests are done both with invalid input (such as non integer ids) and valid inputs that are not allowed (such as non existing ids)
+#### GET invalid id format
+* Tries getting 100 unexisting ids
+* Tries getting 100 non integer ids at random
+* Check that each case is rejected
+
 #### POST invalid id format
 * Tries posting 100 invalid ids at random and checks they are rejected
   * Random ids will be random characters of random length
@@ -131,6 +139,7 @@ Same as above but using GET for the following endpoint:
   * Random names will be random floats and integers
   
 #### PUT invalid id format
+* Tries updating 100 missing ids
 * Tries updating 100 invalid ids at random and checks they are rejected
   * Random ids will be random characters of random length
   * Excluding digits and ':'
@@ -140,7 +149,8 @@ Same as above but using GET for the following endpoint:
   * Random names will be random floats and integers
 
 #### DELETE invalid id format
-* Tries deleting 100 invalid ids at random and checks they are rejected
+* Tries deleting 100 non existing ids and checks if they are rejected
+* Tries deleting 100 invalid ids at random and checks if they are rejected
   * Random ids will be random characters of random length
 
 #### Test Blog post GET
