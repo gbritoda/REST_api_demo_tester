@@ -1,0 +1,1 @@
+py.test test_REST_API.py -v --html=automated_tests_report.html --self-contained-html 

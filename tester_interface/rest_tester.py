@@ -28,6 +28,7 @@ class RestTester():
     ERR_INVALID_FIELD = -2
     ERR_REQ_FAILED = -3
     ERR_TEST_FAILED = -4
+    ERR_WRONG_STATUS = -5
     ERR_UNKNOWN = -100
 
     status_codes = {
@@ -36,6 +37,7 @@ class RestTester():
         ERR_INVALID_FIELD: "Invalid field in response",
         ERR_REQ_FAILED: "A request failed",
         ERR_TEST_FAILED: "The test failed",
+        ERR_WRONG_STATUS: "Returned wrong status code",
         ERR_UNKNOWN: "Unknown error",
 
         SUC_HTTP_OK: "Successful HTTP request",
@@ -150,8 +152,6 @@ class RestTester():
         return requests.delete(urljoin(_url, str(id)))
     
     def get_category_by_id(self, id):
-        if type(id) != int:
-            raise TypeError("id is of type {0}, must be integer.".format(type(id)))
         _url = urljoin(self.base_url, self.API_CATEGORIES)
         return requests.get(urljoin(_url, str(id)))
 
@@ -212,7 +212,7 @@ class RestTester():
     # Basic functional testing
     def test_blog_categories_GET(self):
         req = self.get_categories()
-        cprint_info(f"\nINFO: GET. Status Code is {req.status_code}")
+        cprint_info(f"INFO: GET. Status Code is {req.status_code}")
         ret = self.__check_request_status(req)
         if ret != self.ERR_NONE:
             return ret
@@ -233,22 +233,22 @@ class RestTester():
 
     def test_blog_categories_POST(self, name, id=None):
         req = self.post_categories(id, name)
-        cprint_info(f"\nINFO: POST for category '{name}'. Status Code is {req.status_code}")
+        cprint_info(f"INFO: POST for category '{name}'. Status Code is {req.status_code}")
         return self.__check_request_status(req)
     
     def test_blog_categories_DELETE(self, id):
         req = self.delete_categories(id)
-        cprint_info(f"\nINFO: DELETE for id {id}. Status Code is {req.status_code}")
+        cprint_info(f"INFO: DELETE for id {id}. Status Code is {req.status_code}")
         return self.__check_request_status(req)
 
     def test_blog_categories_PUT(self, id, new_name):
         req = self.put_category_by_id(id, new_name)
-        cprint_info(f"\nINFO: PUT for id {id}. Status Code is {req.status_code}")
+        cprint_info(f"INFO: PUT for id {id}. Status Code is {req.status_code}")
         return self.__check_request_status(req)
 
     def test_blog_category_id_GET(self, id):
         req = self.get_category_by_id(id)
-        cprint_info(f"\nINFO: GET for category id {id}. Status Code is {req.status_code}")
+        cprint_info(f"INFO: GET for category id {id}. Status Code is {req.status_code}")
         ret = self.__check_request_status(req)
         return ret
     
@@ -281,6 +281,40 @@ class RestTester():
         if post_obj['name'] != name:
             cprint_err("\nERROR: POSTED category name does not match with category name obtained by GET")
             cprint_err(f"POST: \"{name}\" \n GET: \"{post_obj['name']}\" \n")
+            ret = self.ERR_INVALID_FIELD
+        
+        req = self.delete_categories(id)
+        cprint_info(f"\nINFO: DELETE ID {id}. Status Code is {req.status_code}")
+        http_ret = self.__check_request_status(req)
+        
+        # If test succeeded, but DELETE request failed
+        if ret == self.ERR_NONE and http_ret != self.ERR_NONE:
+            return http_ret
+        else:
+            return ret
+
+    def test_blog_categories_post__get_by_id__delete(self, id, name):
+        print(f"Posting Category: \"{name}\"")
+        req = self.post_categories(id=id, name=name)
+        cprint_info(f"\nINFO: POST. Status Code is {req.status_code}")
+        ret = self.__check_request_status(req)
+        if ret != self.ERR_NONE:
+            return ret
+
+        req = self.get_category_by_id(id)
+        cprint_info(f"\nINFO: GET. Status Code is {req.status_code}")
+        ret = self.__check_request_status(req)
+        if ret != self.ERR_NONE:
+            return ret
+        resp = req.json()
+
+        if resp['name'] != name:
+            cprint_err("\nERROR: POSTED category name does not match with category name obtained by GET")
+            cprint_err(f"POST: \"{name}\" \n GET: \"{resp['name']}\" \n")
+            ret = self.ERR_INVALID_FIELD
+        if resp['id'] != id:
+            cprint_err("\nERROR: POSTED category id does not match with category id obtained by GET")
+            cprint_err(f"POST: \"{id}\" \n GET: \"{resp['id']}\" \n")
             ret = self.ERR_INVALID_FIELD
         
         req = self.delete_categories(id)
@@ -349,9 +383,26 @@ class RestTester():
     
     ###########################################################################
     # Basic Negative Tests for blog categories
+
+    def test_blog_categories_get_invalid_id(self, invalid_id):
+        get_ret = self.test_blog_category_id_GET(invalid_id)
+        cprint_info(f"Candidate id: {invalid_id}")
+        if (get_ret == self.ERR_HTTP_BAD_REQUEST) or (get_ret == self.ERR_HTTP_NOT_FOUND):
+            cprint_suc(f"Invalid id {invalid_id} rejected successfully")
+            return self.ERR_NONE
+        elif self.__is_html_error(get_ret):
+            cprint_err("ERROR: Request rejected but with wrong status code.")
+            return self.ERR_WRONG_STATUS
+        elif (get_ret == self.ERR_NONE):
+            cprint_err("ERROR: Request was not rejected")
+            return self.ERR_WRONG_STATUS
+        else:
+            cprint_err(f"ERROR: {self.__dec_status(get_ret)}")
+            return self.get_ret
+
     def test_blog_categories_post_invalid_id_format(self, id, name="Null"):
         post_ret = self.test_blog_categories_POST(id=id, name=name)
-        cprint_info(f"Candidate ID: {id}")
+        cprint_info(f"Candidate id: {id}")
         if self.__is_html_error(post_ret):
             cprint_suc("Request rejected successfully")
             return self.ERR_NONE
@@ -372,12 +423,19 @@ class RestTester():
     def test_blog_categories_put_invalid_id_format(self, invalid_id):
         cprint_info(f"Candidate id: {invalid_id}")
         put_ret = self.test_blog_categories_PUT(id=invalid_id, new_name="Null")
-        if self.__is_html_error(put_ret):
-            cprint_suc("Request rejected successfully")
+
+        if (put_ret == self.ERR_HTTP_BAD_REQUEST) or (put_ret == self.ERR_HTTP_NOT_FOUND):
+            cprint_suc(f"Invalid id {invalid_id} rejected successfully")
             return self.ERR_NONE
+        elif self.__is_html_error(put_ret):
+            cprint_err("ERROR: Request rejected but with wrong status code.")
+            return self.ERR_WRONG_STATUS
+        elif (put_ret == self.ERR_NONE):
+            cprint_err("ERROR: Request was not rejected")
+            return self.ERR_WRONG_STATUS
         else:
-            cprint_err("ERROR: Invalid put request was not rejected")
-            return self.ERR_TEST_FAILED
+            cprint_err(f"ERROR: {self.__dec_status(put_ret)}")
+            return self.put_ret
 
     def test_blog_categories_put_invalid_name_format(self, invalid_name):
         # Getting a valid ID for the test
@@ -403,14 +461,20 @@ class RestTester():
             return self.ERR_TEST_FAILED
     
     def test_blog_categories_delete_invalid_id(self, invalid_id):
-        ret = self.test_blog_categories_DELETE(invalid_id)
+        del_ret = self.test_blog_categories_DELETE(invalid_id)
 
-        if self.__is_html_error(ret):
-            cprint_suc("Request rejected successfully")
+        if (del_ret == self.ERR_HTTP_BAD_REQUEST) or (del_ret == self.ERR_HTTP_NOT_FOUND):
+            cprint_suc(f"Invalid id {invalid_id} rejected successfully")
             return self.ERR_NONE
+        elif self.__is_html_error(del_ret):
+            cprint_err("ERROR: Request rejected but with wrong status code.")
+            return self.ERR_WRONG_STATUS
+        elif (del_ret == self.ERR_NONE):
+            cprint_err("ERROR: Request was not rejected")
+            return self.ERR_WRONG_STATUS
         else:
-            cprint_err("ERROR: Invalid post request was not rejected")
-            return self.ERR_TEST_FAILED
+            cprint_err(f"ERROR: {self.__dec_status(del_ret)}")
+            return self.del_ret
     
 
 
