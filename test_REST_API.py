@@ -140,6 +140,7 @@ class Test_REST():
         POST blog category, DELETE it, and use GET by category id to confirm
         it is deleted
         """
+        self.Tester.reset_database_to_default()
         print_test_title("Blog Categories - POST, DELETE, GET")
         assert self.Tester.test_blog_categories_post__delete__get(id=id, name=name) \
             == self.Tester.ERR_NONE, "Failed in one of the steps. Please check report for more details"
@@ -247,6 +248,7 @@ class Test_REST():
         _chars = _chars.replace(':','')
         success = True
         n_failed = 0
+        self.Tester.reset_database_to_default()
 
         for i in range(n_test_cases):
             print("")
@@ -270,6 +272,7 @@ class Test_REST():
         n_test_cases = 50
         success = True
         n_failed = 0
+        self.Tester.reset_database_to_default()
 
         # Integers
         cprint_info("Testing random integers")
@@ -345,6 +348,7 @@ class Test_REST():
         n_test_cases = 50
         success = True
         n_failed = 0
+        self.Tester.reset_database_to_default()
 
         # Integers
         cprint_info("Testing random integers")
@@ -423,6 +427,7 @@ class Test_REST():
         random.seed(time.time())
         n_failed = 0
         success = True
+        self.Tester.reset_database_to_default()
         
         for i in range(n_test_cases):
             page = random.randint(1,50)
