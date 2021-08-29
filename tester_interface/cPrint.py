@@ -1,3 +1,6 @@
+"""
+Library for colourful printouts
+"""
 from colorama import init, Fore, Back, Style
 
 init(convert=True)

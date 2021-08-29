@@ -6,8 +6,10 @@ import string
 import random
 import time
 
+global MAX_CHARS
+MAX_CHARS = 79 # Python standard
+
 def print_test_title(test_name):
-    MAX_CHARS = 79 # Python standard
     title = ' ' + test_name + ' '
     title = title.center(MAX_CHARS, '=')
     title = '\n\n' + title + '\n'
@@ -20,6 +22,7 @@ class Test_REST():
 
 # Positive test - Check basic functionality, "happy path"
 # Negative test - Problem scenarios, with valid or invalid input
+# 'Destructive' test - Attempt to break API
 
 ###############################################################################
 # Database reset to default
@@ -48,6 +51,37 @@ class Test_REST():
             == self.Tester.ERR_NONE, "Failed in one of the steps. Please check report for more details"
 
 ###############################################################################
+# 'Destructive' test
+    def test_Blog_categories_post_and_get_and_delete_big_payload(self):
+        """
+        POST blog category, GET it and check that data is consistent, then DELETE
+        Mainly to test POST and GET
+        """
+        print_test_title("Blog Categories - POST, GET, DELETE w/ big payload")
+        self.Tester.reset_database_to_default()
+        success = True
+        _chars = string.ascii_lowercase + string.ascii_uppercase
+        pld_size = 100 # Initial payload size
+        pld_step = 50  # Size that payload will increase for each test case
+        n_test_cases = 5
+        n_failed = 0
+
+        for i in range(n_test_cases):
+            print("")
+            ovrsz_pld = "".join([random.choice(_chars) for i in range(pld_size)])
+            cprint_info(f" Testing payload of size {pld_size} ".center(MAX_CHARS, '#'))
+            cprint_info(f"\nPayload: {ovrsz_pld}")
+            ret = \
+                 self.Tester.test_blog_categories_post__check_post__delete(name=ovrsz_pld)
+            if ret != self.Tester.ERR_NONE:
+                success = False
+                n_failed += 1
+            pld_size += pld_step
+        
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check the test report"
+
+
+###############################################################################
 # Positive test
     @pytest.mark.parametrize("id,name",
         [(4, "Category name"),
@@ -58,9 +92,42 @@ class Test_REST():
         POST blog category, GET it and check that data is consistent, then DELETE
         Mainly to test POST and GET
         """
-        print_test_title("Blog Categories - POST, GET, DELETE")
+        print_test_title("Blog Categories - POST, GET by id, DELETE")
+        self.Tester.reset_database_to_default()
         assert self.Tester.test_blog_categories_post__get_by_id__delete(id=id, name=name) \
             == self.Tester.ERR_NONE, "Failed in one of the steps. Please check report for more details"
+
+###############################################################################
+# 'Destructive' test
+    def test_Blog_categories_post_and_get_by_id_and_delete_big_payload(self):
+        """
+        POST blog category, GET it and check that data is consistent, then DELETE
+        Mainly to test POST and GET
+        """
+        print_test_title("Blog Categories - POST, GET by id, DELETE w/ oversized payload")
+        self.Tester.reset_database_to_default()
+        success = True
+        _chars = string.ascii_lowercase + string.ascii_uppercase
+        pld_size = 100 # Initial payload size
+        pld_step = 50  # Size that payload will increase for each test case
+        n_test_cases = 5
+        n_failed = 0
+        _id = 4 # Initial id, will increase by one with each test case
+
+        for i in range(n_test_cases):
+            print("")
+            ovrsz_pld = "".join([random.choice(_chars) for i in range(pld_size)])
+            cprint_info(f" Testing payload of size {pld_size} ".center(MAX_CHARS, '#'))
+            cprint_info(f"\nPayload: {ovrsz_pld}")
+            ret = \
+                 self.Tester.test_blog_categories_post__get_by_id__delete(id=_id, name=ovrsz_pld)
+            if ret != self.Tester.ERR_NONE:
+                success = False
+                n_failed += 1
+            pld_size += pld_step
+            _id += 1
+        
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check the test report"
 
 ###############################################################################
 # Positive test
@@ -89,10 +156,44 @@ class Test_REST():
         DELETE
         """
         print_test_title("Blog Categories - POST, PUT, GET, DELETE")
+        self.Tester.reset_database_to_default()
         name = "Null"
         assert self.Tester.test_blog_categories_post__put__get__delete(id=id,
             name=name, new_name=new_name) == self.Tester.ERR_NONE,\
                 "Failed in one of the steps. Please check report for more details"
+
+###############################################################################
+# 'Destructive' test
+    def test_Blog_categories_post__put__get__delete_big_payload(self):
+        """
+        POST blog category, GET it and check that data is consistent, then DELETE
+        Mainly to test POST and GET
+        """
+        print_test_title("Blog Categories - POST, PUT, GET and DELETE w/ oversized payload")
+        self.Tester.reset_database_to_default()
+        success = True
+        _chars = string.ascii_lowercase + string.ascii_uppercase
+        pld_size = 100 # Initial payload size
+        pld_step = 50  # Size that payload will increase for each test case
+        n_test_cases = 5
+        n_failed = 0
+        _id = 4 # Initial id, will increase by one with each test case
+
+        for i in range(n_test_cases):
+            print("")
+            ovrsz_pld = "".join([random.choice(_chars) for i in range(pld_size)])
+            cprint_info(f" Testing payload of size {pld_size} ".center(MAX_CHARS, '#'))
+            cprint_info(f"\nPayload: {ovrsz_pld}")
+            ret = \
+                 self.Tester.test_blog_categories_post__put__get__delete(id=_id,
+                                            name ="Null",new_name=ovrsz_pld)
+            if ret != self.Tester.ERR_NONE:
+                success = False
+                n_failed += 1
+            pld_size += pld_step
+            _id += 1
+        
+        assert success, f"{n_failed}/{n_test_cases} test cases failed, please check the test report"
 
 ###############################################################################
 # Negative test 
@@ -120,7 +221,6 @@ class Test_REST():
         
         # Non integer ids
         _chars = string.ascii_lowercase + string.ascii_uppercase
-        _chars = _chars.replace(':','')
         for i in range(n_test_cases//2):
             print("")
             id_len = random.randint(1,5) # Random length between 1 and 5

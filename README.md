@@ -76,8 +76,6 @@ py.test test_REST_API.py -v --html=report.html --self-contained-html
 
 Rewrites the db.sqlite file to a default stage
 
-### Positive testing
-Tests basic functionality
 #### GET Blog categories
 * Sends a GET request for /api/blog/categories
 * Checks HTTP response code
@@ -95,9 +93,24 @@ Tests basic functionality
 * "A category name that is quite longer"
 * "Category@name-with1symbols."
 
+#### POST, GET and DELETE with big payload
+* Same tests as above but
+* Starts with a payload of random characters of size 100
+* Sends the big payload and increases the next by 50
+* Repeat 5 times
+* Check for errors
+
 #### POST, GET by id, and DELETE Blog Categories
 Same as above but using GET for the following endpoint:
 * /blog/categories/{id}
+
+
+#### POST, GET by id, and DELETE with big payload
+* Same tests as above but
+* Starts with a payload of random characters of size 100
+* Sends the big payload and increases the next by 50
+* Repeat 5 times
+* Check for errors
 
 #### POST, DELETE and GET Blog categories
 * Posts a blog category
@@ -119,11 +132,15 @@ Same as above but using GET for the following endpoint:
 3 test cases for category id and names:
 * 4, "Category name"
 * 5, "A category name that is quite longer"
-* 6, "Category@name-with1symbols."+
+* 6, "Category@name-with1symbols."
 
-### Negative testing
-The application should gracefully handle the problem.
-> Tests are done both with invalid input (such as non integer ids) and valid inputs that are not allowed (such as non existing ids)
+#### POST, PUT, GET and DELETE with big payload
+* Same tests as above but
+* Starts with a payload of random characters of size 100
+* Sends the big payload and increases the next by 50
+* Repeat 5 times
+* Check for errors
+
 #### GET invalid id format
 * Tries getting 100 unexisting ids
 * Tries getting 100 non integer ids at random
