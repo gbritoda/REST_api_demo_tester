@@ -66,7 +66,9 @@ class RestTester():
     # Paths
     API_CATEGORIES = "/api/blog/categories/"
     API_POSTS      = "/api/blog/posts/"
-
+    
+    MAX_CHARS = 79 # Python standard
+    
     def __init__(self, config_file):
         with open(config_file, 'r') as _f:
             config = json.load(_f)
@@ -386,15 +388,15 @@ class RestTester():
 
     def test_blog_categories_get_invalid_id(self, invalid_id):
         get_ret = self.test_blog_category_id_GET(invalid_id)
-        cprint_info(f"Candidate id: {invalid_id}")
+        cprint_info(f"Candidate id: {invalid_id}".center(self.MAX_CHARS, '#'))
         if (get_ret == self.ERR_HTTP_BAD_REQUEST) or (get_ret == self.ERR_HTTP_NOT_FOUND):
-            cprint_suc(f"Invalid id {invalid_id} rejected successfully")
+            cprint_suc(f"Invalid id {invalid_id} rejected successfully\n")
             return self.ERR_NONE
         elif self.__is_html_error(get_ret):
-            cprint_err("ERROR: Request rejected but with wrong status code.")
+            cprint_err("ERROR: Request rejected but with wrong status code.\n")
             return self.ERR_WRONG_STATUS
         elif (get_ret == self.ERR_NONE):
-            cprint_err("ERROR: Request was not rejected")
+            cprint_err("ERROR: Request was not rejected\n")
             return self.ERR_WRONG_STATUS
         else:
             cprint_err(f"ERROR: {self.__dec_status(get_ret)}")
@@ -402,7 +404,7 @@ class RestTester():
 
     def test_blog_categories_post_invalid_id_format(self, id, name="Null"):
         post_ret = self.test_blog_categories_POST(id=id, name=name)
-        cprint_info(f"Candidate id: {id}")
+        cprint_info(f"Candidate id: {id}".center(self.MAX_CHARS, '#'))
         if self.__is_html_error(post_ret):
             cprint_suc("Request rejected successfully")
             return self.ERR_NONE
@@ -411,7 +413,7 @@ class RestTester():
             return self.ERR_TEST_FAILED
     
     def test_blog_categories_post_invalid_name_format(self, name):
-        cprint_info(f"Candidate name: {name}")
+        cprint_info(f"Candidate name: {name}".center(self.MAX_CHARS, '#'))
         post_ret = self.test_blog_categories_POST(id=None, name=name)
         if self.__is_html_error(post_ret):
             cprint_suc("Request rejected successfully")
@@ -421,20 +423,20 @@ class RestTester():
             return self.ERR_TEST_FAILED
 
     def test_blog_categories_put_invalid_id_format(self, invalid_id):
-        cprint_info(f"Candidate id: {invalid_id}")
+        cprint_info(f"Candidate id: {invalid_id}".center(self.MAX_CHARS, '#'))
         put_ret = self.test_blog_categories_PUT(id=invalid_id, new_name="Null")
 
         if (put_ret == self.ERR_HTTP_BAD_REQUEST) or (put_ret == self.ERR_HTTP_NOT_FOUND):
-            cprint_suc(f"Invalid id {invalid_id} rejected successfully")
+            cprint_suc(f"Invalid id {invalid_id} rejected successfully\n")
             return self.ERR_NONE
         elif self.__is_html_error(put_ret):
-            cprint_err("ERROR: Request rejected but with wrong status code.")
+            cprint_err("ERROR: Request rejected but with wrong status code.\n")
             return self.ERR_WRONG_STATUS
         elif (put_ret == self.ERR_NONE):
-            cprint_err("ERROR: Request was not rejected")
+            cprint_err("ERROR: Request was not rejected\n")
             return self.ERR_WRONG_STATUS
         else:
-            cprint_err(f"ERROR: {self.__dec_status(put_ret)}")
+            cprint_err(f"ERROR: {self.__dec_status(put_ret)}\n")
             return self.put_ret
 
     def test_blog_categories_put_invalid_name_format(self, invalid_name):
@@ -464,13 +466,13 @@ class RestTester():
         del_ret = self.test_blog_categories_DELETE(invalid_id)
 
         if (del_ret == self.ERR_HTTP_BAD_REQUEST) or (del_ret == self.ERR_HTTP_NOT_FOUND):
-            cprint_suc(f"Invalid id {invalid_id} rejected successfully")
+            cprint_suc(f"Invalid id {invalid_id} rejected successfully\n")
             return self.ERR_NONE
         elif self.__is_html_error(del_ret):
-            cprint_err("ERROR: Request rejected but with wrong status code.")
+            cprint_err("ERROR: Request rejected but with wrong status code.\n")
             return self.ERR_WRONG_STATUS
         elif (del_ret == self.ERR_NONE):
-            cprint_err("ERROR: Request was not rejected")
+            cprint_err("ERROR: Request was not rejected\n")
             return self.ERR_WRONG_STATUS
         else:
             cprint_err(f"ERROR: {self.__dec_status(del_ret)}")
